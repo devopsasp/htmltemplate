@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Page</title>
+    <link href="../css/home.css" rel="stylesheet" type="text/css" />
+  <script>
+      function callpop()
+      {
+  var avdt=document.getElementById("avatar-card")
+  avdt.style.display="block"
+  
+       
+}
+  function closepop(e)
+  {
+      
+      var avdt=document.getElementsByClassName("box")
+         
+      alert(avdt)
+      
+  
+
+  }
+  function callsettings()
+  {
+      var set=document.getElementById("setting-card")
+      set.style.display="block";
+  }
+  function changestyle()
+  {
+      var checked=document.getElementsByClassName("check-style") 
+      var box=document.getElementsByClassName("box")
+      var leftpanel=document.getElementsByClassName("leftpanel")
+      var rightpanel=document.getElementsByClassName("rightpanel")
+    var navbar=document.getElementsByClassName("navbar")
+    var logo=document.getElementsByClassName("logo")
+    var seticon=document.getElementsByClassName("setting-icon")
+      if(checked[0].checked==true)
+      {
+          //  alert("selected")
+            document.body.style.backgroundColor="black";
+            box[0].style.color="White";
+            leftpanel[0].style.color="white";
+            rightpanel[0].style.color="white";
+            navbar[0].style.backgroundColor="black";
+            logo[0].style.color="white"
+            seticon[0].style.backgroundImage="url('../images/settings_dark.png')"
+      }
+      if(checked[0].checked==false)
+      {
+          //  alert("unselected")
+            document.body.style.backgroundColor="white";
+            box[0].style.color="black";
+            leftpanel[0].style.color="black"
+           rightpanel[0].style.color="black"
+           navbar[0].style.backgroundColor="white"
+           logo[0].style.color="black"
+           seticon[0].style.backgroundImage="url('../images/settings.png')"
+      }
+  }
+    window.onclick=function(event)
+    {
+      var outer=document.getElementById("outer")
+      var mynav=document.getElementById("mynav")
+      var avdtcard=document.getElementById("avatar-card")
+      var set=document.getElementById("setting-card")
+      if(event.target==outer|| event.target==mynav)
+      {  
+              avdtcard.style.display="none"
+              set.style.display="none"
+              
+      }
+    }
+  
+
+      </script>
+</head>
+<body>
+ <div id="outer">     
+      <nav class="navbar" id="mynav">
+            <div class="logo">
+                  <img src="../images/logo.png" width="50px" height="50px"/>COFFEE
+            </div>
+             <ul>
+                  <li>
+                        <input type="text" class="search"  placeholder="search text"/>
+                  </li>
+                   <li>
+                          <a href="#">Home</a>
+                   </li>
+                   <li>
+                        <a href="#">Products</a>
+                 </li>
+                   <li>
+                         <a href="#">Contact Us</a>
+                   </li>
+                   <li>
+                         <a href="#">About Us</a>
+                   </li>
+                   <li>
+                        <div  onclick="callsettings()" class="setting-icon">
+                         <!-- <img src="../images/settings_dark.png" width="40px" height="40px"/>-->
+                        </div>
+                        <div id="setting-card">
+                      <span onclick="changestyle()" class="change-style">
+                        Dark Mode  <input type="checkbox" class="check-style" onclick="changestyle()"/>
+                    </span>
+                        </div>
+                   </li>
+                   <li>
+                        <div onclick="callpop()" class="avatar">
+                         P
+                        </div>
+                        <div id="avatar-card">
+                            <div class="small-card">
+                              Peter Sam
+                              <span class="email-text">peterone23four@gmail.com</span>
+                            </div>
+                          <hr/>
+                           <button>
+                              Switch Account
+                           </button>
+                           <button>
+                             Sign Out
+                           </button>
+                           
+                        </div>
+
+                   </li>
+             </ul>
+             
+             <div class="hamburger">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+             </div>
+      </nav>
+   
+
+      <div class="box">
+
+            
+                                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br/>
+                        <a href="#">Read More</a> <a href="#">View Menu</a>
+                       
+                  </div>  
+                
+      </div>  
+      <div class="formbox">
+                   <div class="leftpanel">
+                        <form>
+                        <div class="form-griditem">
+                              CONTACT US
+                        </div>
+                       
+                              <div class="form-griditem">
+                           <input type="text" placeholder="Your Name"/>
+                        </div>
+                        <div class="form-griditem">
+                           <input type="text" placeholder="Your Email Id"/>
+                        </div>
+                        <div class="form-griditem">
+                           <input type="text" placeholder="Your Contact No"/>
+                        </div>
+                        <div class="form-griditem">
+                              <textArea placeholder="Your message"></textArea>
+                        </div>
+
+                        <div class="form-griditem">
+                           <input type="submit" value="Send" />
+                        </div>
+                        
+
+                   </div>
+                  </form>
+                   <div class="rightpanel">     
+                        <div>Visit our store</div>  
+                        <div class="storecard">   
+                              <div class="cardimage">
+                     <figure>
+                        <img src="../images/store.jpg" width="250px" height="300px"/>
+                     </figure> 
+                  </div>
+                    <div class="cardtext">
+                        Cras fermentum odio eu feugiat. 
+                        Pulvinar neque laoreet suspendisse 
+                        interdum consectetur libero id faucibus. 
+                        Arcu cursus vitae congue mauris rhoncus aenean
+                        Adipiscing elit 
+                    </div>
+                  </div>                                         
+                  </div>
+      </div>
+</div>
+</body>
+</html>
